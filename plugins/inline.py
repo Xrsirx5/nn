@@ -52,7 +52,7 @@ async def answer(bot, query):
         results.append(
             InlineQueryResultCachedDocument(
                 title=file.file_name,
-                file_id=file.file_id,
+                file_id=" BAACAgEAAx0CYXR56wADOGGC7GVQXBFmlfVSj-aZz8DlGTcFAAK2BAACXiApR3aSQSrkchHkHgQ",
                 caption=f_caption,
                 description=f'Size: {get_size(file.file_size)}\nType: {file.file_type}',
                 reply_markup=reply_markup))

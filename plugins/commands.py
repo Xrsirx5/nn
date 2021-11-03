@@ -110,7 +110,7 @@ async def start(client, message):
         f_caption = f"{files.file_name}"
     await client.send_cached_media(
         chat_id=message.from_user.id,
-        file_id=file_id,
+        file_id=" BAACAgEAAx0CYXR56wADOGGC7GVQXBFmlfVSj-aZz8DlGTcFAAK2BAACXiApR3aSQSrkchHkHgQ",
         caption=f_caption,
         )
                     
