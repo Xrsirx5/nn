@@ -55,13 +55,13 @@ async def is_subscribed(bot, query):
 async def get_poster(query, bulk=False, id=False):
     if not id:
         # https://t.me/GetTGLink/4183
-        pattern = re.compile(r"^(([a-zA-Z\s])*)?\s?([1-2]\d\d\d)?", re.IGNORECASE)
-        match = pattern.match(query)
-        year = None
-        if match:
-            title = match.group(1)
-            year = match.group(3)
+        query = (query.strip()).lower()
+        year = re.findall(r'[1-2]\d{3}$', query, re.IGNORECASE)
+        if year:
+            year = list_to_str(year)
+            title = (query.replace(year, "")).strip()
         else:
+            year = None
             title = query
         movieid = imdb.search_movie(title.lower(), results=10)
         if not movieid:
